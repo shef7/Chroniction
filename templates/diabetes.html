@@ -1,0 +1,70 @@
+{% extends 'main.html' %}
+{% block content %}
+{% if message %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endif %}
+    <img src="https://res.cloudinary.com/grohealth/image/upload/c_fill,f_auto,fl_lossy,h_650,q_auto,w_1085/v1581695681/DCUK/Content/causes-of-diabetes.png" width="1470" height="250" alt="">
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+    <center><h1 ><i>Diabetes</i></h1> </center>
+                <p>Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Blood glucose is your main source of energy and comes from the food you eat. Insulin, a hormone made by the pancreas, helps glucose from food get into your cells to be used for energy. Sometimes your body doesn’t make enough—or any—insulin or doesn’t use insulin well. Glucose then stays in your blood and doesn’t reach your cells.</p>
+               <p>Diabetes mellitus, commonly known as diabetes, is a metabolic disease that causes high blood sugar. The hormone insulin moves sugar from the blood into your cells to be stored or used for energy. With diabetes, your body either doesn't make enough insulin or can't effectively use the insulin it does make.</p>
+               <p>It is a chronic disease that occurs when the pancreas is no longer able to make insulin, or when the body cannot make good use of the insulin it produces.</p>
+
+               <p> Insulin is a hormone made by the pancreas, that acts like a key to let glucose from the food we eat pass from the blood stream into the cells in the body to produce energy. All carbohydrate foods are broken down into glucose in the blood. Insulin helps glucose get into the cells. 
+                
+                Not being able to produce insulin or use it effectively leads to raised glucose levels in the blood (known as hyperglycaemia). Over the long-term high glucose levels are associated with damage to the body and failure of various organs and tissues.</p> 
+               <center> <h2><i>Symptoms</i></h2></center>
+                <ul>
+                    <li>Urinating often.</li>
+                    <li>Feeling very thirsty.</li>
+                    <li>Extreme fatigue.</li>
+                    <li>Blurry vision.</li>
+                </ul>
+                <center> <h2><i>Precautions</i></h2></center>
+                <ul>
+                    <li>Lose extra weight. Losing weight reduces the risk of diabetes</li>
+                    <li>Be more physically active. There are many benefits to regular physical activity.</li>
+                    <li>Eat healthy plant foods. Plants provide vitamins, minerals and carbohydrates in your diet.</li>
+                    <li>Skip fat diets and make healthier choices.</li>
+                </ul>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <center><h2><i>Diabetes Predictor</i></h2></center>
+            <div class="card card-body" style="border: 1px solid black;">
+                <form class="form-horizontal" action="{{ url_for('predictPage') }}" method="POST">
+                    <div class="form-group">
+                        <input style="border: 1px solid black;" class="form-control" type="text" name="pregnancies" placeholder="Number of Pregnancies eg. 0">
+                    </div>
+            		<div class="form-group">
+                        <input style="border: 1px solid black;" class="form-control" type="text" name="glucose" placeholder="Glucose (mg/dL) eg. 80">
+                    </div>
+            		<div class="form-group">
+                        <input style="border: 1px solid black;" class="form-control" type="text" name="bloodpressure" placeholder="Blood Pressure (mmHg) eg. 80">
+                    </div>
+            		<div class="form-group">
+                        <input style="border: 1px solid black;" class="form-control" type="text" name="skinthickness" placeholder="Skin Thickness (mm) eg. 20">
+                    </div>
+            		<div class="form-group">
+                        <input style="border: 1px solid black;" class="form-control" type="text" name="insulin" placeholder="Insulin Level (IU/mL) eg. 80">
+                    </div>
+            		<div class="form-group">
+                        <input style="border: 1px solid black;" class="form-control" type="text" name="bmi" placeholder="Body Mass Index (kg/m²) eg. 23.1">
+                    </div>
+            		<div class="form-group">
+                        <input style="border: 1px solid black;" class="form-control" type="text" name="dpf" placeholder="Diabetes Pedigree Function eg. 0.52">
+                    </div>
+            		<div class="form-group">
+                        <input style="border: 1px solid black;" class="form-control" type="text" name="age" placeholder="Age (years) eg. 34">
+                    </div>
+
+            		<input type="submit" class="btn btn-info btn-block" value="Predict">
+                </form>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div></div></div>
+{% endblock %}

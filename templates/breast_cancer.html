@@ -1,0 +1,198 @@
+{% extends 'main.html' %}
+{% block content %}
+<img src="https://www.doconline.com/assets/image/blog/breast-cancer.jpg" width="1470" height="250" alt="">
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <center><h1 ><i>Breast Cancer</i></h1> </center>
+<p>A cancer that forms in the cells of the breasts.
+    Breast cancer can occur in women and rarely in men.
+    Symptoms of breast cancer include a lump in the breast, bloody discharge from the nipple and changes in the shape or texture of the nipple or breast.
+    Its treatment depends on the stage of cancer. It may consist of chemotherapy, radiation, hormone therapy and surgery.</p>
+<p>After skin cancer, breast cancer is the most common cancer diagnosed in women in the United States. Breast cancer can occur in both men and women, but it's far more common in women.</p>
+<p>Substantial support for breast cancer awareness and research funding has helped created advances in the diagnosis and treatment of breast cancer. Breast cancer survival rates have increased, and the number of deaths associated with this disease is steadily declining, largely due to factors such as earlier detection, a new personalized approach to treatment and a better understanding of the disease.</p>
+               <center> <h2><i>Symptoms</i></h2></center>
+                <ul>
+                    <li>A breast lump or thickening that feels different from the surrounding tissue.</li>
+                    <li>Change in the size, shape or appearance of a breast.</li>
+                    <li>Changes to the skin over the breast, such as dimpling.</li>
+                    <li>A newly inverted nipple.</li>
+                    <li>Peeling, scaling, crusting or flaking of the pigmented area of skin surrounding the nipple (areola) or breast skin.</li>
+                <li>Redness or pitting of the skin over your breast, like the skin of an orange</li>
+                </ul>
+                <center> <h2><i>Precautions</i></h2></center>
+                <ul>
+                    <li>Limit alcohol. The more alcohol you drink, the greater your risk of developing breast cancer. </li>
+                    <li>Maintain a healthy weight. If your weight is healthy, work to maintain that weight. </li>
+                    <li>Be physically active. Physical activity can help you maintain a healthy weight, which helps prevent breast cancer..</li>
+                    <li>Breast-feed. Breast-feeding might play a role in breast cancer prevention. The longer you breast-feed, the greater the protective effect.</li>
+                </ul>
+        <center><h1><i>Breast Cancer Predictor</i></h1></center>
+        <div class="card card-body" style="border: 1px solid rgb(241, 109, 109);">
+            <form class="form-horizontal" action="{{ url_for('predictPage1') }}" method="POST">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="radius_mean" placeholder="radius_mean">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="texture_mean" placeholder="texture_mean">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="perimeter_mean" placeholder="perimeter_mean">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="area_mean" placeholder="area_mean">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="smoothness_mean" placeholder="smoothness_mean">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="compactness_mean" placeholder="compactness_mean">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="concavity_mean" placeholder="concavity_mean">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="concave_points_mean" placeholder="concave_points_mean">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="symmetry_mean" placeholder="symmetry_mean">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="radius_se" placeholder="radius_se">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="perimeter_se" placeholder="perimeter_se">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="area_se" placeholder="area_se">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="compactness_se" placeholder="compactness_se">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="concavity_se" placeholder="concavity_se">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="concave_points_se" placeholder="concave_points_se">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="fractal_dimension_se" placeholder="fractal_dimension_se">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="radius_worst" placeholder="radius_worst">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="texture_worst" placeholder="texture_worst">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="perimeter_worst" placeholder="perimeter_worst">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="area_worst" placeholder="area_worst">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="smoothness_worst" placeholder="smoothness_worst">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="compactness_worst" placeholder="compactness_worst">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="concavity_worst" placeholder="concavity_worst">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="concave_points_worst" placeholder="concave_points_worst">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="symmetry_worst" placeholder="symmetry_worst">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="fractal_dimension_worst" placeholder="fractal_dimension_worst">
+                        </div>
+                    </div>
+                </div>
+                
+
+                <input type="submit" class="btn btn-info btn-block" value="Predict">
+            </form>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+{% endblock %}
